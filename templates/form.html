@@ -1,0 +1,23 @@
+{% extends '__base.html' %}
+
+{% block content %}
+    {% if name %}
+    <h1>
+        {{ name }}
+    </h1>
+        
+    {% else %}
+        Simple form
+    {% endif %}    
+    <form action="" method="post">
+        {% for item in form %}
+        <tr>
+            <th>{{ item.label }}</th>
+            <td>{{ item }}</td>
+        </tr>
+        {% endfor %}
+        <button type="submit">Submit</button>
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
